@@ -16,6 +16,8 @@ function yes(){
   }
   letterGuessedRaw=prompt("Guess a letter");
   numberOfGuesses++;
+  var element = document.getElementById("numberofguesses");
+  element.innerHTML = "Number of guesses " + numberOfGuesses;
   firstTime=false;
   }
 function assesit() {
