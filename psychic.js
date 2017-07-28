@@ -23,7 +23,6 @@ function yes(){
     numberOfGuesses++;
     var element = document.getElementById("numberofguesses");
     element.innerHTML = "Number of guesses " + numberOfGuesses;
-    firstTime=false;
     console.log("letterIPicked is " + letterIPicked);
     console.log("letterGuessed = " + letterGuessed);
     if (letterGuessed != letterIPicked) {
