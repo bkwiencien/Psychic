@@ -4,19 +4,18 @@ var letterIPicked= " ";
 var letterGuessedRaw = " ";
 var letterguessed = " ";
 var letterEntered = " ";
+var numberOfGuesses = 0;
 function yes(){
-  console.log("I am in yes");
   var tempnum = 0
   var gener = 0;
   if (firstTime) {
     tempnum = Math.round(Math.random()*100);
     gener = tempnum % 25;
-    console.log("gener =" + gener);
     letterIPicked  = alphabet[gener];
-    console.log(letterIPicked);
     firstTime = false;
   }
   letterGuessedRaw=prompt("Guess a letter");
+  numberOfGuesses++;
   firstTime=false;
   }
 function assesit() {
