@@ -16,6 +16,7 @@ function yes(){
     firstTime = false;
   }
   while (!done) {
+    console.log("at the top of the while loop");
     letterGuessedRaw=prompt("Guess a letter");
     letterGuessed = letterGuessedRaw.toLowerCase();
     numberOfGuesses++;
@@ -24,8 +25,16 @@ function yes(){
     firstTime=false;
     console.log("letterIPicked is " + letterIPicked);
     console.log("letterGuessed = " + letterGuessed);
-    var element1 = document.getElementById("mainimage");
-    element1.src="assets/images/wrong.jpeg"
+    if (letterGuessed != letterIPicked) {
+       console.log("wrong should change image");
+       var element1 = document.getElementById("mainimage");
+       element1.src="assets/images/wrong.jpeg"
+    }
+    if (letterGuessed == letterIPicked) {
+       var element2 = document.getElementById("mainimage");
+       element2.src= "assets/image/correct.jpeg";
+       done = true;
+    }
   }
   }
 function assesit() {
