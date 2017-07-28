@@ -15,12 +15,18 @@ function yes(){
     letterIPicked  = alphabet[gener];
     firstTime = false;
   }
-  letterGuessedRaw=prompt("Guess a letter");
-  letterGuessed = letterGuessedRaw.toLowerCase();
-  numberOfGuesses++;
-  var element = document.getElementById("numberofguesses");
-  element.innerHTML = "Number of guesses " + numberOfGuesses;
-  firstTime=false;
+  while (!done) {
+    letterGuessedRaw=prompt("Guess a letter");
+    letterGuessed = letterGuessedRaw.toLowerCase();
+    numberOfGuesses++;
+    var element = document.getElementById("numberofguesses");
+    element.innerHTML = "Number of guesses " + numberOfGuesses;
+    firstTime=false;
+    console.log("letterIPicked is " + letterIPicked);
+    console.log("letterGuessed = " + letterGuessed);
+    var element1 = document.getElementById("mainimage");
+    element1.src="assets/images/wrong.jpeg"
+  }
   }
 function assesit() {
 }
