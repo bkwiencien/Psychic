@@ -30,6 +30,9 @@ function yes(){
        console.log("wrong should change image");
        var element2 = document.getElementById("mainimage");
        element2.src= "assets/images/wrong.jpeg";
+       console.log("image should have been changed");
+       console.log("element2 = " + element2);
+       console.log("element2.src = " + element2.src);
     } else {
        console.log("correct should change image");
        var element1 = document.getElementById("mainimage");
