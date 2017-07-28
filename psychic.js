@@ -19,6 +19,7 @@ function yes(){
     console.log("at the top of the while loop");
     letterGuessedRaw=prompt("Guess a letter");
     letterGuessed = letterGuessedRaw.toLowerCase();
+    console.log("letterGuessed = " + letterGuessed);
     numberOfGuesses++;
     var element = document.getElementById("numberofguesses");
     element.innerHTML = "Number of guesses " + numberOfGuesses;
@@ -32,7 +33,7 @@ function yes(){
     }
     if (letterGuessed == letterIPicked) {
        var element2 = document.getElementById("mainimage");
-       element2.src= "assets/image/correct.jpeg";
+       element2.src= "assets/images/correct.jpeg";
        done = true;
     }
   }
