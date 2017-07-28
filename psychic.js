@@ -27,16 +27,17 @@ function yes(){
     console.log("letterIPicked is " + letterIPicked);
     console.log("letterGuessed = " + letterGuessed);
     if (letterGuessed != letterIPicked) {
-       console.log("wrong should change image");
-       var element1 = document.getElementById("mainimage");
-       element1.src="assets/images/wrong.jpeg"
-    }
-    if (letterGuessed == letterIPicked) {
+       console.log("wrong shoul change image");
        var element2 = document.getElementById("mainimage");
-       element2.src= "assets/images/correct.jpeg";
+       element2.src= "assets/images/wrong.jpeg";
+    } else {
+       console.log("correct should change image");
+       var element1 = document.getElementById("mainimage");
+       console.log("got image element");
+       element1.src="assets/images/correct.jpeg"
        done = true;
-    }
   }
   }
+}
 function assesit() {
 }
