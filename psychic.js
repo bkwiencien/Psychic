@@ -11,3 +11,5 @@ function yes(){
   }
   firstTime=false;
   }
+function assesit() {
+}
