@@ -15,6 +15,7 @@ function yes(){
     firstTime = false;
   }
   letterGuessedRaw=prompt("Guess a letter");
+  letterGuessed = letterGuessedRaw.toLowerCase();
   numberOfGuesses++;
   var element = document.getElementById("numberofguesses");
   element.innerHTML = "Number of guesses " + numberOfGuesses;
