@@ -5,6 +5,7 @@ var letterGuessedRaw = " ";
 var letterguessed = " ";
 var letterEntered = " ";
 var numberOfGuesses = 0;
+var done = false;
 function yes(){
   var tempnum = 0
   var gener = 0;
