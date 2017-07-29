@@ -17,7 +17,12 @@ function yes(){
     firstTime = false;
   }
   while (!done) {
+    console.log(numberOfGuesses);
+    if (numberOfGuesses >8) {
+     done = true;
+    }
     guessNumber = numberOfGuesses +1 ;
+    console.log("numberOfGuessesses = " + numberOfGuesses);
     console.log("at the top of the while loop");
     letterGuessedRaw=prompt("Guess a letter this is guess " + guessNumber);
     letterGuessed = letterGuessedRaw.toLowerCase();
