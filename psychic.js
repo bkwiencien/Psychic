@@ -32,6 +32,7 @@ function yes(){
        console.log("image should have been changed");
        console.log("element2 = " + element2);
        console.log("element2.src = " + element2.src);
+       alert("Wrong");
     } else {
        console.log("correct should change image");
        var element1 = document.getElementById("mainimage");
