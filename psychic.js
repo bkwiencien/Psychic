@@ -6,6 +6,7 @@ var letterguessed = " ";
 var letterEntered = " ";
 var numberOfGuesses = 0;
 var done = false;
+var guessNumber;
 function yes(){
   var tempnum = 0
   var gener = 0;
@@ -16,8 +17,9 @@ function yes(){
     firstTime = false;
   }
   while (!done) {
+    guessNumber = numberOfGuesses +1 ;
     console.log("at the top of the while loop");
-    letterGuessedRaw=prompt("Guess a letter");
+    letterGuessedRaw=prompt("Guess a letter this is guess " + guessNumber);
     letterGuessed = letterGuessedRaw.toLowerCase();
     console.log("letterGuessed = " + letterGuessed);
     numberOfGuesses++;
@@ -32,7 +34,7 @@ function yes(){
        console.log("image should have been changed");
        console.log("element2 = " + element2);
        console.log("element2.src = " + element2.src);
-       alert("Wrong");
+       //alert("Wrong");
     } else {
        console.log("correct should change image");
        var element1 = document.getElementById("mainimage");
