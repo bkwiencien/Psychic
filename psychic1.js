@@ -5,6 +5,7 @@ var letterGuessedRaw = " ";
 var letterguessed = " ";
 var letterEntered = " ";
 var numberOfGuesses = 0;
+var userText ="";
 var done = false;
 var guessNumber;
 function yes(){
@@ -16,10 +17,20 @@ function yes(){
     letterIPicked  = alphabet[gener];
     firstTime = false;
   }
-  while (!done) {
+  //while (!done) {
+  while (numberOfGuesses < 11) {
     guessNumber = numberOfGuesses +1 ;
+    console.log("about to call my function");
+    document.onkey = function(event) {
+       console.log("here here ");
+       userText.textContent = event.key;
+       letterGuessedRaw = userText.textContent;
+    };
     console.log("at the top of the while loop");
-    letterGuessedRaw=prompt("Guess a letter this is guess " + guessNumber);
+    console.log(event);
+    var userText = document.getElementById("user-text");
+   // letterGuessedRaw=prompt("Guess a letter this is guess " + guessNumber);
+    letterGuessedRaw=getInput(event);
     letterGuessed = letterGuessedRaw.toLowerCase();
     console.log("letterGuessed = " + letterGuessed);
     numberOfGuesses++;
@@ -43,5 +54,11 @@ function yes(){
   }
   }
 }
-function assesit() {
-}
+function getInput(event) {
+console.log("in the function");
+      console.log("in getInput");
+      userText.textContent = event.key;
+      console.log("event key = " +event.key);
+      letterGuessedRaw = userText.textContent;
+      return (letterGuessedRaw);
+    }
