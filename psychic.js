@@ -9,6 +9,7 @@ var userText ="";
 var done = false;
 var guessNumber;
 var alreadyGuessed = "";
+var len = 0;
 function getData() {
    if (firstTime) {
     tempnum = Math.round(Math.random()*100);
@@ -21,8 +22,10 @@ function getData() {
    letterGuessedRaw = input.value;
    letterGuessed = letterGuessedRaw.toLowerCase();
    alreadyGuessed = alreadyGuessed + letterGuessed;
-   var element3 = document.getElementById("guessedsofar");
-   //element3.innerHTML ("You have already guessed " + alreadyGuessed);
+   var element3  = document.getElementById("guessedsofar");
+   console.log(element3);
+   element3.innerHTML = "You have already guessed " + alreadyGuessed;
+   console.log( "alreadyGuessed = " + alreadyGuessed);
    console.log("that worked i got an " + letterGuessedRaw);
    numberOfGuesses++;
    var element = document.getElementById("numberofguesses");
