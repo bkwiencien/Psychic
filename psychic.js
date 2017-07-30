@@ -20,6 +20,11 @@ function getData() {
   }
    var input=document.getElementById("userinput")
    letterGuessedRaw = input.value;
+   len = letterGuessedRaw.length;
+   if (len > 1) {
+     letterGuessedRaw = letterGuessedRaw.charAt(0);
+   }
+   console.log("len = " + len);
    letterGuessed = letterGuessedRaw.toLowerCase();
    alreadyGuessed = alreadyGuessed + letterGuessed;
    var element3  = document.getElementById("guessedsofar");
