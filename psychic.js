@@ -26,13 +26,10 @@ if (!done) {
    if (len > 1) {
      letterGuessedRaw = letterGuessedRaw.charAt(0);
    }
-   console.log("len = " + len);
    letterGuessed = letterGuessedRaw.toLowerCase();
    alreadyGuessed = alreadyGuessed + letterGuessed;
    var element3  = document.getElementById("guessedsofar");
-   console.log(element3);
    element3.innerHTML = "You have already guessed " + alreadyGuessed;
-   console.log( "alreadyGuessed = " + alreadyGuessed);
    console.log("that worked i got an " + letterGuessedRaw);
    numberOfGuesses++;
    var element = document.getElementById("numberofguesses");
@@ -46,7 +43,6 @@ if (!done) {
      element1.src="assets/images/correct.jpeg"
    }
    if (numberOfGuesses >9 ) {
-     console.log("greater than 9");
      var element4 = document.getElementById("mainimage");
      element4.src="assets/images/loser.jpeg";
      done = true;
