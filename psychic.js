@@ -10,6 +10,7 @@ var done = false;
 var guessNumber;
 var alreadyGuessed = "";
 var len = 0;
+done = false;
 function getData() {
    if (firstTime) {
     tempnum = Math.round(Math.random()*100);
@@ -18,6 +19,7 @@ function getData() {
     console.log("letterIPicked = " + letterIPicked);
     firstTime = false;
   }
+if (!done) {
    var input=document.getElementById("userinput")
    letterGuessedRaw = input.value;
    len = letterGuessedRaw.length;
@@ -43,4 +45,11 @@ function getData() {
      var element1 = document.getElementById("mainimage");
      element1.src="assets/images/correct.jpeg"
    }
+   if (numberOfGuesses >9 ) {
+     console.log("greater than 9");
+     var element4 = document.getElementById("mainimage");
+     element4.src="assets/images/loser.jpeg";
+     done = true;
+ }
+}
 }
