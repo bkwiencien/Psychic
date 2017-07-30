@@ -2,12 +2,13 @@ var alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q
 var firstTime=true;
 var letterIPicked= " ";
 var letterGuessedRaw = " ";
-var letterguessed = " ";
+var letterGuessed = " ";
 var letterEntered = " ";
 var numberOfGuesses = 0;
 var userText ="";
 var done = false;
 var guessNumber;
+var alreadyGuessed = "";
 function yes(){
   var tempnum = 0
   var gener = 0;
@@ -17,20 +18,11 @@ function yes(){
     letterIPicked  = alphabet[gener];
     firstTime = false;
   }
-  //while (!done) {
-  while (numberOfGuesses < 11) {
+  while (!done) {
     guessNumber = numberOfGuesses +1 ;
-    console.log("about to call my function");
-    document.onkey = function(event) {
-       console.log("here here ");
-       userText.textContent = event.key;
-       letterGuessedRaw = userText.textContent;
-    };
-    console.log("at the top of the while loop");
-    console.log(event);
-    var userText = document.getElementById("user-text");
-   // letterGuessedRaw=prompt("Guess a letter this is guess " + guessNumber);
-    letterGuessedRaw=getInput(event);
+    if (numberOfGuesses > 10) {
+     done = true;
+    }
     letterGuessed = letterGuessedRaw.toLowerCase();
     console.log("letterGuessed = " + letterGuessed);
     numberOfGuesses++;
@@ -52,13 +44,32 @@ function yes(){
        element1.src="assets/images/correct.jpeg"
        done = true;
   }
-  }
 }
-function getInput(event) {
-console.log("in the function");
-      console.log("in getInput");
-      userText.textContent = event.key;
-      console.log("event key = " +event.key);
-      letterGuessedRaw = userText.textContent;
-      return (letterGuessedRaw);
-    }
+}
+function getData() {
+   if (firstTime) {
+    tempnum = Math.round(Math.random()*100);
+    gener = tempnum % 25;
+    letterIPicked  = alphabet[gener];
+    console.log("letterIPicked = " + letterIPicked);
+    firstTime = false;
+  }
+   var input=document.getElementById("userinput")
+   letterGuessedRaw = input.value;
+   letterGuessed = letterGuessedRaw.toLowerCase();
+   alreadyGuessed = alreadyGuessed + letterGuessed;
+//   var element3 = document.getElementById("guessedsofar");
+   //element3.innerHTML ("You have already guessed " + alreadyGuessed);
+   console.log("that worked i got an " + letterGuessedRaw);
+   numberOfGuesses++;
+   var element = document.getElementById("numberofguesses");
+   element.innerHTML = "Number of guesses " + numberOfGuesses;
+   if (letterGuessed != letterIPicked) {
+     var element2 = document.getElementById("mainimage");
+       element2.src= "assets/images/wrong.jpeg";
+   }
+   if (letterGuessed == letterIPicked) {
+     var element1 = document.getElementById("mainimage");
+     element1.src="assets/images/correct.jpeg"
+   }
+}

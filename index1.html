@@ -9,9 +9,11 @@
                 <center><img id="mainimage" src="assets/images/image1.jpeg" height="200px" width="200px"></center>
 		<div class="panel panel-default">
     	<div class="panel-body"><h1>Want to play psychic??? answer yes or yes.You get 10 guesses</h1> <br/>
-                <h2> I case fold</h2>
-                        <button onclick="yes()" class="btn-info">Yes</button>
-                <h3> You just guessed <span id="user-text"><strong>...Nothing.</strong></span>
+                <h2> I case fold make a guess.</h2>
+<!--                     <button onclick="yes()" class="btn-info">Yes</button> -->
+                     <input type="text" id="userinput" size="1" autofocus value=" " />
+                     <input type="submit" value="submit" onclick="getData()" />
+                      
 		</div>	
 		</div>
         <div class="container-fluid">
@@ -22,7 +24,7 @@
          </div>
          <div class="row">
           <div class="col-md-6">
-           <p id="guessedsofar"> You have alreaady guessed</p>
+           <p id="guessedsofar"> You have already guessed</p>
           </div>
          </div>
          <script type="text/javascript" src="psychic1.js"></script>
