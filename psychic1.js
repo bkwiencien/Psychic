@@ -21,7 +21,7 @@ function getData() {
    letterGuessedRaw = input.value;
    letterGuessed = letterGuessedRaw.toLowerCase();
    alreadyGuessed = alreadyGuessed + letterGuessed;
-//   var element3 = document.getElementById("guessedsofar");
+   var element3 = document.getElementById("guessedsofar");
    //element3.innerHTML ("You have already guessed " + alreadyGuessed);
    console.log("that worked i got an " + letterGuessedRaw);
    numberOfGuesses++;
